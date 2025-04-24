@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protomatic | Modern Tech Concept</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #0f0f0f;
+      color: #f4f4f4;
+      line-height: 1.6;
+    }
+    header {
+      background: #000;
+      color: #00f7ff;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .login-button {
+  background-color: #00eaff;
+  color: #001f3f;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-left: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+ 
+.login-button:hover {
+  background-color: #00b8cc;
+  color: white;
+}
+    nav a {
+      color: #00f7ff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ff2b8c;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1551292830-088d7fd7c5a4') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #00f7ff;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .hero a {
+      background: #00f7ff;
+      color: #000;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .hero a:hover {
+      background: #ff2b8c;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #00f7ff;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #00f7ff33;
+      border-radius: 12px;
+      padding: 2rem;
+      flex: 1 1 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px #00f7ff55;
+    }
+    .card h3 {
+      color: #ff2b8c;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      color: #bbb;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='Group 1000008859.png') }}" alt="Logo" height="80">
+    <nav>
+      <a href="{{ url_for('dashboard') }}">Home</a>
+      <a href="#">About</a>
+      <a href="#">Industries</a>
+      <a href="#">Contact</a>
+      <a href="{{ url_for('login_page') }}" class="login-button">Login</a>
+    </nav>
+  </header>
+ 
+  <section class="hero">
+    <div>
+      <h1>AI-Powered OCR Microservices</h1>
+      <p>Transforming raw documents into structured insights with intelligent microservice architecture.</p>
+      <!-- <a href="#">Discover the Solution</a> -->
+      <a href="{{ url_for('login_page') }}" class="login-button">Discover the Solution</a>
+    </div>
+  </section>
+ 
+<section class="py-5 bg-dark text-light">
+  <div class="container">
+    <h2 class="text-center text-info mb-5">Smart Solutions Engineered for Precision</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-4">
+        <div class="card  h-100 text-center border-info">
+          <div class="card-body">
+            <h5 class="card-title "style="color: #ff2b8c">🔍 AI-Based Intelligent Solutions</h5>
+            <p class="card-text">Automate decision-making and extract insights from unstructured data using ML and deep learning.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card  h-100 text-center border-info">
+          <div class="card-body">
+            <h5 class="card-title "style="color: #ff2b8c">📄 OCR-Based Data Extraction</h5>
+            <p class="card-text">Extract structured information from images and documents with high-precision OCR engines.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card  h-100 text-center border-info">
+          <div class="card-body">
+            <h5 class="card-title "style="color: #ff2b8c">📊 Comparative Analysis</h5>
+            <p class="card-text">Identify mismatches, calculate % accuracy, and provide real-time suggestions for improvement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card  h-100 text-center border-info">
+          <div class="card-body">
+            <h5 class="card-title "style="color: #ff2b8c">👨‍💼 ATS-Based Profile Matching</h5>
+            <p class="card-text ">Match resumes with job descriptions using contextual AI scoring and keyword optimization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+  <footer>
+    <p>&copy; 2025 Protomatic Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
